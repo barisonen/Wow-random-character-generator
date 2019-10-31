@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html>
+
+<div class="wrapper"  > <!-- style="background-image: url('WoW_icon.png'); -->
+	<body>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<img src="WoW_icon.png" width="191" height="160">
+		<p> <strong> <font size="+3"> World Of Warcraft Character Generator </font> </strong> </p>
+		<br>
+		<br>
+		<button class="button1" onclick="classicGenerator()">Classic</button>
+		<button class="button2" onClick="retailGenerator()">Retail</button>
+	
+		<br>
+		<br>
+		<br>
+		
+		<strong> Spec </strong> <input type="checkbox" id="specCheckbox" onclick="specChecking()">
+		&ensp;&ensp;&ensp; 
+		<strong> Sex </strong> <input type="checkbox" id="sexCheckbox" onclick="sexChecking()">
+		<br>
+		<br>
+		<br>
+		
+
+		<!--
+		<img src= <span id="imageBox"> </span>>
+		-->
+	</body>
+	<footer>
+		<br>
+		<br>
+		<p> <strong> <font size="+2"> <span id="output"></span> <strong> </font> </p>
+	</footer>
+</div>
+<style>
+
+
+.wrapper {
+	text-align: center;
+}
+	
+body {
+	background-color: #F0FFF0;
+}
+	
+.button1 {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	padding: 15px 35px;
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
+	background-color: #4CAF50;
+}
+.button2 {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	padding: 15px 35px;
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
+	background-color: #4CAF50;
+}
+
+
+</style>
+
+<script>
+
+var specChecked = 0;
+var sexChecked = 0;
+var output;
+function classicGenerator() 
+{
+	var choice1 = Math.floor(Math.random() * 8) + 1;  
+	switch(choice1)
+	{
+		case 1:
+			output = "Human";
+			var choice2 = Math.floor(Math.random() * 6) + 1; 
+			switch(choice2)
+			{
+				case 1:
+					output = mageSpecGenerator(output);
+					output = output + " Mage";
+					break;
+				case 2:
+					output = paladinSpecGenerator(output);
+					output = output + " Paladin";
+					break;
+				case 3:
+					output = priestSpecGenerator(output);
+					output = output + " Priest";
+					break;
+				case 4:
+					output = rogueSpecGenerator(output);
+					output = output + " Rogue";
+					break;
+				case 5:
+					output = warlockSpecGenerator(output);
+					output = output + " Warlock";
+					break;
+				case 6:
+					output = warriorSpecGenerator(output);
+					output = output + " Warrior";
+					break;
+			}
+			break;
+		case 2:
+			output = "Dwarf";
+			var choice2 = Math.floor(Math.random() * 5) + 1; 
+			switch(choice2)
+			{
+				case 1:
+					output = hunterSpecGenerator(output);
+					output = output + " Hunter";
+					break;
+				case 2:
+					output = paladinSpecGenerator(output);
+					output = output + " Paladin";
+					break;
+				case 3:
+					output = priestSpecGenerator(output);
+					output = output + " Priest";
+					break;
+				case 4:
+					output = rogueSpecGenerator(output);
+					output = output + " Rogue";
+					break;
+				case 5:
+					output = warriorSpecGenerator(output);
+					output = output + " Warrior";
+					break;
+				}
+			break;
+		case 3:
+					output = "Night Elf";
+					var choice2 = Math.floor(Math.random() * 5) + 1; 
+					switch(choice2)
+					{
+						case 1:
+							output = druidSpecGenerator(output);
+							output = output + " Druid";
+							break;
+						case 2:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 3:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 4:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 5:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+					}
+					break;
+				case 4:
+					output = "Gnome";
+					var choice2 = Math.floor(Math.random() * 4) + 1; 
+					switch(choice2)
+					{
+						case 1:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 2:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 3:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 4:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+					}
+					break;
+				case 5:
+					output = "Orc";
+					var choice2 = Math.floor(Math.random() * 5) + 1; 
+					switch(choice2)
+					{
+						case 1:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 2:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 3:
+							output = shamanSpecGenerator(output);
+							output = output + " Shaman";
+							break;
+						case 4:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 5:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+					}
+					break;
+				case 6:
+					output = "Undead";
+					var choice2 = Math.floor(Math.random() * 5) + 1; 
+					switch(choice2)
+					{
+						case 1:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 2:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 3:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 4:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 5:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+					}
+					break;
+				case 7:
+					output = "Tauren";
+					var choice2 = Math.floor(Math.random() * 4) + 1; 
+					switch(choice2)
+					{
+						case 1:
+							output = druidSpecGenerator(output);
+							output = output + " Druid";
+							break;
+						case 2:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 3:
+							output = shamanSpecGenerator(output);
+							output = output + " Shaman";
+							break;
+						case 4:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+					}
+					break;
+				case 8:
+					output = "Troll";
+					var choice2 = Math.floor(Math.random() * 6) + 1; 
+					switch(choice2)
+					{
+						case 1:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 2:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 3:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 4:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 5:
+							output = shamanSpecGenerator(output);
+							output = output + " Shaman";
+							break;
+						case 6:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+					}
+					break;
+	}
+	if(sexChecked == 1)
+	{
+		var sexChoice = Math.floor(Math.random() * 2) + 1;
+		switch(sexChoice)
+		{
+			case 1:
+				output = output + " (Male)";
+				break;
+			case 2:
+				output = output + " (Female)";
+				break;
+		}
+	}
+	document.getElementById("output").innerHTML = output;	
+}
+function retailGenerator() 
+{
+	var choice1 = Math.floor(Math.random() * 23) + 1;
+	switch(choice1)
+	{
+		case 1:
+			output = "Human";
+			var choice2 = Math.floor(Math.random() * 9) + 1;
+			switch(choice2)
+			{
+				case 1:
+					output = hunterSpecGenerator(output);
+					output = output + " Hunter";
+					break;
+				case 2:
+					output = mageSpecGenerator(output);
+					output = output + " Mage";
+					break;
+				case 3:
+					output = paladinSpecGenerator(output);
+					output = output + " Paladin";
+					break;
+				case 4:
+					output = priestSpecGenerator(output);
+					output = output + " Priest";
+					break;
+				case 5:
+					output = rogueSpecGenerator(output);
+					output = output + " Rogue";
+					break;
+				case 6:
+					output = warlockSpecGenerator(output);
+					output = output + " Warlock";
+					break;
+				case 7:
+					output = warriorSpecGenerator(output);
+					output = output + " Warrior";
+					break;
+				case 8:
+					output = deathKnightSpecGenerator(output);
+					output = output + " Death Knight";
+					break;
+				case 9:
+					output = monkSpecGenerator(output);
+					output = output + " Monk";
+					break;
+			}
+		break;
+		case 2:
+			output = "Dwarf";
+			var choice2 = Math.floor(Math.random() * 10) + 1;
+			switch(choice2)
+			{
+				case 1:
+					output = hunterSpecGenerator(output);
+					output = output + " Hunter";
+					break;
+				case 2:
+					output = paladinSpecGenerator(output);
+					output = output + " Paladin";
+					break;
+				case 3:
+					output = priestSpecGenerator(output);
+					output = output + " Priest";
+					break;
+				case 4:
+					output = rogueSpecGenerator(output);
+					output = output + " Rogue";
+					break;
+				case 5:
+					output = warriorSpecGenerator(output);
+					output = output + " Warrior";
+					break;
+				case 6:
+					output = deathKnightSpecGenerator(output);
+					output = output + " Death Knight";
+					break;
+				case 7:
+					output = mageSpecGenerator(output);
+					output = output + " Mage";
+					break;
+				case 8:
+					output = shamanSpecGenerator(output);
+					output = output + " Shaman";
+					break;
+				case 9:
+					output = warlockSpecGenerator(output);
+					output = output + " Warlock";
+					break;
+				case 10:
+					output = monkSpecGenerator(output);
+					output = output + " Monk";
+					break;
+				}
+				break;
+			case 3:
+				output = "Night Elf";
+				var choice2 = Math.floor(Math.random() * 9) + 1;
+				switch(choice2)
+				{
+					case 1:
+						output = druidSpecGenerator(output);
+						output = output + " Druid";
+						break;
+					case 2:
+						output = hunterSpecGenerator(output);
+						output = output + " Hunter";
+						break;
+					case 3:
+						output = priestSpecGenerator(output);
+						output = output + " Priest";
+						break;
+					case 4:
+						output = rogueSpecGenerator(output);
+						output = output + " Rogue";
+						break;
+					case 5:
+						output = warriorSpecGenerator(output);
+						output = output + " Warrior";
+						break;
+					case 6:
+						output = deathKnightSpecGenerator(output);
+						output = output + " Death Knight";
+						break;
+					case 7:
+						output = mageSpecGenerator(output);
+						output = output + " Mage";
+						break;
+					case 8:
+						output = monkSpecGenerator(output);
+						output = output + " Monk";
+						break;
+					case 9:
+						output = demonHunterSpecGenerator(output);
+						output = output + " Demon Hunter";
+						break;
+					}
+					break;
+				case 4:
+					output = "Gnome";
+					var choice2 = Math.floor(Math.random() * 8) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 2:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 3:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 4:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 5:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 6:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 7:
+							output = monkSpecGenerator(output);
+							output = output + " Monk";
+							break;
+						case 8:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+					}
+					break;
+				case 5:
+					output = "Draenei";
+					var choice2 = Math.floor(Math.random() * 8) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 2:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 3:
+							output = paladinSpecGenerator(output);
+							output = output + " Paladin";
+							break;
+						case 4:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 5:
+							output = shamanSpecGenerator(output);
+							output = output + " Shaman";
+							break;
+						case 6:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 7:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 8:
+							output = monkSpecGenerator(output);
+							output = output + " Monk";
+							break;
+					}
+					break;
+				case 6:
+					output = "Worgen";
+					var choice2 = Math.floor(Math.random() * 8) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 2:
+							output = druidSpecGenerator(output);
+							output = output + " Druid";
+							break;
+						case 3:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 4:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 5:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 6:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 7:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 8:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+					}
+					break;
+				case 7:
+					output = "Orc";
+					var choice2 = Math.floor(Math.random() * 8) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 2:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 3:
+							output = shamanSpecGenerator(output);
+							output = output + " Shaman";
+							break;
+						case 4:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 5:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 6:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 7:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 8:
+							output = monkSpecGenerator(output);
+							output = output + " Monk";
+							break;
+					}
+					break;
+				case 8:
+					output = "Undead";
+					var choice2 = Math.floor(Math.random() * 8) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 2:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 3:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 4:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 5:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 6:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 7:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 8:
+							output = monkSpecGenerator(output);
+							output = output + " Monk";
+							break;
+						}
+					break;
+				case 9:
+					output = "Tauren";
+					var choice2 = Math.floor(Math.random() * 5) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 2:
+							output = druidSpecGenerator(output);
+							output = output + " Druid";
+							break;
+						case 3:
+							output = paladinSpecGenerator(output);
+							output = output + " Paladin";
+							break;
+						case 4:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 5:
+							output = monkSpecGenerator(output);
+							output = output + " Monk";
+							break;
+					}
+					
+					break;
+				case 10:
+					output = "Troll";
+					var choice2 = Math.floor(Math.random() * 10) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 2:
+							output = druidSpecGenerator(output);
+							output = output + " Druid";
+							break;
+						case 3:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 4:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 5:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 6:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 7:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 8:
+							output = shamanSpecGenerator(output);
+							output = output + " Shaman";
+							break;
+						case 9:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 10:
+							output = monkSpecGenerator(output);
+							output = output + " Monk";
+							break;
+					}
+					break;
+				case 11:
+					output = "Blood Elf";
+					var choice2 = Math.floor(Math.random() * 10) + 1;
+					switch(choice2)
+					{
+						case 1:
+							output = hunterSpecGenerator(output);
+							output = output + " Hunter";
+							break;
+						case 2:
+							output = paladinSpecGenerator(output);
+							output = output + " Paladin";
+							break;
+						case 3:
+							output = priestSpecGenerator(output);
+							output = output + " Priest";
+							break;
+						case 4:
+							output = rogueSpecGenerator(output);
+							output = output + " Rogue";
+							break;
+						case 5:
+							output = warriorSpecGenerator(output);
+							output = output + " Warrior";
+							break;
+						case 6:
+							output = deathKnightSpecGenerator(output);
+							output = output + " Death Knight";
+							break;
+						case 7:
+							output = mageSpecGenerator(output);
+							output = output + " Mage";
+							break;
+						case 8:
+							output = demonHunterSpecGenerator(output);
+							output = output + " Demon Hunter";
+							break;
+						case 9:
+							output = warlockSpecGenerator(output);
+							output = output + " Warlock";
+							break;
+						case 10:
+							output = monkSpecGenerator(output);
+							output = output + " Monk";
+								break;
+						}
+						break;
+					case 12:
+						output = "Goblin";
+						var choice2 = Math.floor(Math.random() * 8) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 2:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = warlockSpecGenerator(output);
+								output = output + " Warlock";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = deathKnightSpecGenerator(output);
+								output = output + " Death Knight";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+							case 8:
+								output = shamanSpecGenerator(output);
+								output = output + " Shaman";
+								break;
+						}
+						break;
+					case 13:
+						output = "Pandaren";
+						var choice2 = Math.floor(Math.random() * 7) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 2:
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = shamanSpecGenerator(output);
+								output = output + " Shaman";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+						}
+						break;
+					case 14:
+						output = "Void Elf";
+						var choice2 = Math.floor(Math.random() * 7) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 2:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = warlockSpecGenerator(output);
+								output = output + " Warlock";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+						}
+						break;
+					case 15:
+						output = "Lightforged Draenei";
+						var choice2 = Math.floor(Math.random() * 5) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 2:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+							case 3:
+								output = paladinSpecGenerator(output);
+								output = output + " Paladin";
+								break;
+							case 4:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 5:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+						}
+						break;
+					case 16:
+						output = "Dark Iron Dwarf";
+						var choice2 = Math.floor(Math.random() * 9) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+							case 2:
+								output = paladinSpecGenerator(output);
+								output = output + " Paladin";
+								break;
+							case 3:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 4:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 7:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 8:
+								output = shamanSpecGenerator(output);
+								output = output + " Shaman";
+								break;
+							case 9:
+								output = warlockSpecGenerator(output);
+								output = output + " Warlock";
+								break;
+						}
+						break;
+					case 17:
+						output = "Kul Tiran";
+						var choice2 = Math.floor(Math.random() * 7) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 2:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = druidSpecGenerator(output);
+								output = output + " Druid";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = shamanSpecGenerator(output);
+								output = output + " Shaman";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+						}
+						break;
+					case 18:
+						output = "Mechagnome";
+						var choice2 = Math.floor(Math.random() * 7) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 2:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = warlockSpecGenerator(output);
+								output = output + " Warlock";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+						}
+						break;
+					case 19:
+						output = "Nightborne";
+						var choice2 = Math.floor(Math.random() * 7) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 2:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = warlockSpecGenerator(output);
+								output = output + " Warlock";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+						}
+						break;
+					case 20:
+						output = "Highmountain Tauren";
+						var choice2 = Math.floor(Math.random() * 5) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 2:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+							case 3:
+								output = shamanSpecGenerator(output);
+								output = output + " Shaman";
+								break;
+							case 4:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 5:
+								output = druidSpecGenerator(output);
+								output = output + " Druid";
+								break;
+						}
+						break;
+					case 21:
+						output = "Zandalari Troll";
+						var choice2 = Math.floor(Math.random() * 9) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+							case 2:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 3:
+								output = paladinSpecGenerator(output);
+								output = output + " Paladin";
+								break;
+							case 4:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 5:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 6:
+								output = shamanSpecGenerator(output);
+								output = output + " Shaman";
+								break;
+							case 7:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 8:
+								output = druidSpecGenerator(output);
+								output = output + " Druid";
+								break;
+							case 9:
+								output = output + " Monk";
+								break;
+						}
+						break;
+					case 22:
+						output = "Maghar Orc";
+						var choice2 = Math.floor(Math.random() * 7) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 2:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = shamanSpecGenerator(output);
+								output = output + " Shaman";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+						}
+						break;
+					case 23:
+						output = "Vulpera";
+						var choice2 = Math.floor(Math.random() * 8) + 1;
+						switch(choice2)
+						{
+							case 1:
+								output = mageSpecGenerator(output);
+								output = output + " Mage";
+								break;
+							case 2:
+								output = priestSpecGenerator(output);
+								output = output + " Priest";
+								break;
+							case 3:
+								output = rogueSpecGenerator(output);
+								output = output + " Rogue";
+								break;
+							case 4:
+								output = monkSpecGenerator(output);
+								output = output + " Monk";
+								break;
+							case 5:
+								output = warriorSpecGenerator(output);
+								output = output + " Warrior";
+								break;
+							case 6:
+								output = deathKnightSpecGenerator(output);
+								output = output + " Death Knight";
+								break;
+							case 7:
+								output = hunterSpecGenerator(output);
+								output = output + " Hunter";
+								break;
+							case 8:
+								output = druidSpecGenerator(output);
+								output = output + " Druid";
+								break;
+						}
+						break;
+				}
+	if(sexChecked == 1)
+	{
+		var sexChoice = Math.floor(Math.random() * 2) + 1;
+		switch(sexChoice)
+		{
+			case 1:
+				output = output + " (Male)";
+				break;
+			case 2:
+				output = output + " (Female)";
+				break;
+		}
+	}
+	document.getElementById("output").innerHTML = output;
+	<!--
+	document.getElementById('imageBox').src = "kontrol2.png"
+	-->
+}
+function specChecking()
+{
+	if(specCheckbox.checked == true)
+	{
+		specChecked = 1;
+	}
+	else
+	{
+		specChecked = 0;
+	}
+	
+}
+function sexChecking()
+{
+	if(sexCheckbox.checked == true)
+	{
+		sexChecked = 1;
+	}
+	else
+	{
+		sexChecked = 0;
+	}
+}
+function warriorSpecGenerator(o) 
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Arms";
+			break;
+		case 2:
+			output = output + " Fury";
+			break;
+		case 3:
+			output = output + " Protection";
+			break;
+	}
+	return output;
+}
+function rogueSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Assassination";
+			break;
+		case 2:
+			output = output + " Outlaw";
+			break;
+		case 3:
+			output = output + " Subtlety";
+			break;
+	}
+	return output;
+}
+function mageSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Frost";
+			break;
+		case 2:
+			output = output + " Fire";
+			break;
+		case 3:
+			output = output + " Arcane";
+			break;
+	}
+	return output;
+}
+function druidSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 4) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Restoration";
+			break;
+		case 2:
+			output = output + " Balance";
+			break;
+		case 3:
+			output = output + " Feral";
+			break;
+		case 4:
+			output = output + " Guardian";
+			break;
+	}
+	return output;
+}
+function warlockSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Demonology";
+			break;
+		case 2:
+			output = output + " Destruction";
+			break;
+		case 3:
+			output = output + " Affliction";
+			break;
+	}
+	return output;
+}
+function monkSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Brewmaster";
+			break;
+		case 2:
+			output = output + " Windwalker";
+			break;
+		case 3:
+			output = output + " Mistweaver";
+			break;
+	}
+	return output;
+}
+function paladinSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Retribution";
+			break;
+		case 2:
+			output = output + " Protection";
+			break;
+		case 3:
+			output = output + " Holy";
+			break;
+	}
+	return output;
+}
+function priestSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Shadow";
+			break;
+		case 2:
+			output = output + " Discipline";
+			break;
+		case 3:
+			output = output + " Holy";
+			break;
+	}
+	return output;
+}
+function deathKnightSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Unholy";
+			break;
+		case 2:
+			output = output + " Blood";
+			break;
+		case 3:
+			output = output + " Frost";
+			break;
+	}
+	return output;
+}
+function hunterSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Marksmanship";
+			break;
+		case 2:
+			output = output + " Survival";
+			break;
+		case 3:
+			output = output + " Beast Mastery";
+			break;
+	}
+	return output;
+}
+function shamanSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 3) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Restoration";
+			break;
+		case 2:
+			output = output + " Elemental";
+			break;
+		case 3:
+			output = output + " Enhancement";
+			break;
+	}
+	return output;
+}
+function demonHunterSpecGenerator(o)
+{
+	if(specChecked == 0)
+	{
+		return o;
+	}
+	var output = o;
+	var spec = Math.floor(Math.random() * 2) + 1;
+	switch(spec)
+	{
+		case 1:
+			output = output + " Vengeance";
+			break;
+		case 2:
+			output = output + " Havoc";
+			break;
+	}
+	return output;
+}
+
+
+
+</script>
+
+</html>
