@@ -1,3 +1,50 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ATTENTION CURIOUS TRAVELER, THIS IS NOT HOW I CODE IN MY PROFFESIONAL LIFE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -37,6 +84,7 @@
 		<br>
 		<br>
 		<p> <strong> <font size="+2"> <span id="output"></span> <strong> </font> </p>
+		<img id="brs" src="idontcareifthiscodeissilly.png"; width="200" height="235">
 	</footer>
 </div>
 <style>
@@ -310,7 +358,17 @@ function classicGenerator()
 				break;
 		}
 	}
-	document.getElementById("output").innerHTML = output;	
+	document.getElementById("output").innerHTML = output;
+	var checkCurrent = output.toLowerCase();
+	if(checkCurrent.includes("human") && checkCurrent.includes("rogue"))
+	{
+		document.getElementById('brs').src = "1.jpeg";
+	}
+	else
+	{
+		document.getElementById('brs').src = "idontcareifthiscodeissilly.png";
+	}
+	
 }
 function retailGenerator() 
 {
@@ -1208,9 +1266,15 @@ function retailGenerator()
 		}
 	}
 	document.getElementById("output").innerHTML = output;
-	<!--
-	document.getElementById('imageBox').src = "kontrol2.png"
-	-->
+	var checkCurrent = output.toLowerCase();
+	if(checkCurrent.includes("human") && checkCurrent.includes("rogue"))
+	{
+		document.getElementById('brs').src = "1.jpeg";
+	}
+	else
+	{
+		document.getElementById('brs').src = "idontcareifthiscodeissilly.png";
+	}
 }
 function specChecking()
 {
